@@ -18,46 +18,47 @@ class Parameters(Struct):
     Attributes
     ----------
     appearanceNormWeight : float
-        Description / TODO
+        Multiplication factor in order to normalize the appearance energy term.
     complianceMaxFactor : float
-        Description
+        Maximum deviation factor from the optimized compliance (e.g. 1.2 means 20% more compliance allowed).
     densityMin : int
         Minimum allowed density. Note that this concerns the design variables
         only (not the physical densities).
     exemplarDownsampling : float
-        Description / TODO
+        Exemplar image scaling.
     exemplarPath : str
-        Description / TODO
+        Path to the exemplar image file.
     exponentSimilarityMetric : float
-        Description / TODO
+        Exponent of the appearance energy.
     filterRadius : float
         Radius of the filter.
     filterType : Enum
         Type of the filter.
     hasGui : bool
-        Description / TODO
+        Show/hide the GUI.
     interpolationType : Enum
         Type of the interpolation scheme.
     lambdaOccurrenceMap : int
-        Description / TODO
+        Amount of enforced spatial uniformity patchmatch (see paper for details).
     maxSolverStep : int
-        Description / TODO
+        Maximum number of solver steps.
     neighborhoodSize : int
-        Description / TODO
+        Texture synthesis neighborhood size.
     numLevels : int
-        Description / TODO
+        Number of multiresolution levels.
     patchMatchIter : int
-        Description / TODO
+        Number of patchmatch iterations.
     penalty : float
         Penalty in the SIMP scheme.
     poissonCoeff : float
         Poisson's coefficient of the base material.
     problemModule : str
-        Description / TODO
+        Boundary conditions filename (inside the problems folder).
     problemOptions : dict
-        Description / TODO
-    problemType : TYPE
-        Description / TODO
+        Additional parameters passed to the problem.
+    problemType : Enum
+        Minimize appearance only, minimize compliance only, or minimize appearance
+        with a compliance constraint.
     treshPedersen : float
         Value of the threshold in the Pedersen interpolation scheme.
     volumeFracMax : float
