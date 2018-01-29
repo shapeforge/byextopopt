@@ -4,13 +4,15 @@ from scipy import misc
 
 def upsample(x, telx, tely):
     inter = 1  # 0 -> nearest, 1-> bilinear
-    x_up = scipy.ndimage.zoom(x.reshape(telx // 2, tely // 2), (2.0, 2.0), order=inter, mode='nearest').flatten()
+    x_up = scipy.ndimage.zoom(
+        x.reshape(telx // 2, tely // 2), (2.0, 2.0), order=inter, mode='nearest').flatten()
     return x_up
 
 
 def downsample(rgb, scaling):
     inter = 1  # 0 -> nearest, 1-> bilinear
-    rgb_down = scipy.ndimage.zoom(rgb, (1.0 / scaling, 1.0 / scaling, 1), order=inter, mode='nearest')
+    rgb_down = scipy.ndimage.zoom(
+        rgb, (1.0 / scaling, 1.0 / scaling, 1), order=inter, mode='nearest')
     return rgb_down
 
 

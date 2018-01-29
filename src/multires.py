@@ -50,7 +50,9 @@ def multires(nelx, nely, params, bc):
 
     # Filter last result to obtain physical variables
     solver.filtering.filter_variables(x, solver.x_phys)
-    results = {"last_optimum": solver.last_optimum_value(), "volume": sum(solver.x_phys) / len(solver.x_phys)}
+    results = {
+        "last_optimum": solver.last_optimum_value(),
+        "volume": sum(solver.x_phys) / len(solver.x_phys)}
     if params.problemType == ProblemType.AppearanceWithMaxCompliance:
         results["compliance_factor"] = solver.compliance_max / min_compliance
     return (solver.x_phys, nelx, nely, results)

@@ -31,6 +31,7 @@ class AppearanceCL(object):
         self.iteration = None
         self.energy_buf = None
         self.gradient_buf = None
+        self.program = None
 
     def load_program(self, filename):
         program_file = open(filename, 'r')
@@ -102,8 +103,8 @@ class AppearanceCL(object):
                                       for i in (0, 1)]
         self.effective_source_size = [self.source_size[i] - patch_size[i] + 1
                                       for i in (0, 1)]
-        assert all(x > 0 for x in self.effective_target_size), "Target dimensions too smalls."
-        assert all(x > 0 for x in self.effective_source_size), "Source dimensions too smalls."
+        assert all(x > 0 for x in self.effective_target_size), "Target dimensions too small."
+        assert all(x > 0 for x in self.effective_source_size), "Source dimensions too small."
         self.nff = numpy.ndarray(
             (self.effective_target_size[0], self.effective_target_size[1], 3))
         self.occurrence_map = numpy.zeros(

@@ -20,7 +20,8 @@ class Parameters(Struct):
     appearanceNormWeight : float
         Multiplication factor in order to normalize the appearance energy term.
     complianceMaxFactor : float
-        Maximum deviation factor from the optimized compliance (e.g. 1.2 means 20% more compliance allowed).
+        Maximum deviation factor from the optimized compliance.
+        For instance, 1.2 means 20% more compliance with respect the topopt result allowed.
     densityMin : int
         Minimum allowed density. Note that this concerns the design variables
         only (not the physical densities).

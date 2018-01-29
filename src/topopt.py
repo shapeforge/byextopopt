@@ -66,6 +66,11 @@ class TopoptProblem(object):
         # Per element compliance
         self.ce = numpy.ones(nely * nelx)
 
+        self.KE = None
+        self.edofMat = None
+        self.iK = None
+        self.jK = None
+
     def young_modulus(self, x):
         # Compute penalized material densities
         if self.interpolationType == InterpolationType.SIMP:
