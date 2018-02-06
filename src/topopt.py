@@ -74,6 +74,8 @@ class TopoptProblem(object):
             return numpy.where(
                 x >= self.treshPedersen, self.Emin + x ** self.penal * (self.Emax - self.Emin),
                 self.Emin + x * self.treshPedersen ** (self.penal - 1.0) * (self.Emax - self.Emin))
+        assert False, "Unrecognized configuration"
+        return x
 
     def young_modulus_grad(self, x):
         # Compute derivative of the penalized material densities
@@ -83,6 +85,8 @@ class TopoptProblem(object):
             return numpy.where(
                 x >= self.treshPedersen, self.penal * x ** (self.penal - 1.0) * (self.Emax - self.Emin),
                 self.treshPedersen ** (self.penal - 1.0) * (self.Emax - self.Emin))
+        assert False, "Unrecognized configuration"
+        return x
 
     def compute_displacements(self, xPhys):
         if self.materialDensity > 0.0:

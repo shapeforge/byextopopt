@@ -31,7 +31,6 @@ class AppearanceCL(object):
         self.iteration = None
         self.energy_buf = None
         self.gradient_buf = None
-        self.program = None
 
     def load_program(self, filename):
         program_file = open(filename, 'r')

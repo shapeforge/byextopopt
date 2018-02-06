@@ -49,11 +49,12 @@ def parse_args():
 
 def main(args):
     input_params = Parameters.loads(args.input_json)
-    print(os.path.splitext(args.input_json)[0] + "_results.json")
+    # print(os.path.splitext(args.input_json)[0] + "_results.json")
     (x_rgb_out, nelx_out, nely_out, results_out) = run(input_params)
     print(results_out, nelx_out, nely_out)
-    with open(os.path.splitext(args.input_json)[0] + "_results.json", 'w') as json_file:
-        json_file.write(json.dumps(results_out))
+    # with open(os.path.splitext(args.input_json)[0] + "_results.json", 'w') as json_file:
+    #     json_file.write(json.dumps(results_out))
+    json.dumps(results_out, indent=4)
     scipy.misc.toimage(x_rgb_out.T, cmin=0.0, cmax=1.0).save(args.output_image)
 
 
