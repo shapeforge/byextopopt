@@ -30,6 +30,8 @@ Usage
 python main.py input/l_beam.json output.png
 ```
 
+![](doc/top.gif?raw=true) ![](doc/tex.gif?raw=true)
+
 
 License
 -------
