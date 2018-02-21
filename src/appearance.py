@@ -111,7 +111,7 @@ class AppearanceCL(object):
         source_pixels = self.source_size[0] * self.source_size[1]
         target_pixels = self.target_size[0] * self.target_size[1]
         patch_pixels = self.patch_size[0] * self.patch_size[1]
-        self.const_occ = source_pixels / (target_pixels * (patch_pixels ** 2))
+        self.const_occ = source_pixels / float(target_pixels * (patch_pixels ** 2))
         # neighborhood matching (patchmatch)
         self.nff_buf = cl.Buffer(self.cl_context, cl.mem_flags.READ_WRITE |
                                  cl.mem_flags.COPY_HOST_PTR, hostbuf=self.nff)
